@@ -1,0 +1,383 @@
+/* Opción 3: réplica del ramo en florero de la foto de referencia — magenta intenso + eucalipto */
+
+:root {
+    --v3-white: #fff9f5;
+    --v3-pink: #de4a80;
+    --v3-pink-deep: #9c1450;
+    --v3-speckle: #6b0f38;
+    --v3-throat: #eef0a0;
+    --v3-leaf: #35643f;
+    --v3-leaf-deep: #1d3d26;
+    --v3-euca: #9fb6a4;
+    --v3-euca-deep: #74907f;
+    --v3-stamen: #f2ecc9;
+    --v3-stamen-tip: #3c1c12;
+    --v3-vase: #fbf9f4;
+    --v3-vase-shade: #ddd6c6;
+}
+
+header {
+    padding-bottom: 0.5rem;
+}
+
+.arrangement {
+    margin-top: 0.25rem;
+    position: relative;
+    width: min(94vw, 520px);
+    height: 540px;
+    margin: 1.5rem auto 0;
+    z-index: 1;
+}
+
+/* ---------- vase ---------- */
+.vase {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 160px;
+    height: 140px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+        102deg,
+        var(--v3-vase-shade) 0%,
+        var(--v3-vase) 30%,
+        #ffffff 52%,
+        var(--v3-vase) 78%,
+        var(--v3-vase-shade) 100%
+    );
+    border-radius: 18px 18px 50% 50% / 18px 18px 64% 64%;
+    box-shadow: 0 20px 34px rgba(15, 24, 18, 0.4);
+    z-index: 0;
+}
+.vase::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    width: 108px;
+    height: 22px;
+    transform: translateX(-50%);
+    background: radial-gradient(
+        ellipse at 50% 40%,
+        #cfc7b4 0%,
+        var(--v3-vase-shade) 70%
+    );
+    border-radius: 50%;
+}
+.vase::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    width: 94px;
+    height: 14px;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse at 50% 40%, #8f8874 0%, #b9b19c 80%);
+    border-radius: 50%;
+}
+
+/* ---------- eucalyptus sprig ---------- */
+.euca {
+    position: absolute;
+    bottom: 144px;
+    left: 50%;
+    transform-origin: 50% 100%;
+    transform: translateX(calc(-50% + var(--base-x, 0px)))
+        rotate(var(--tilt, 0deg));
+    z-index: calc(var(--layer, 1) + 10);
+    animation: bouquet3-sway var(--sway-dur, 10s) ease-in-out infinite;
+    animation-delay: var(--sway-delay, 0s);
+}
+.euca__stem {
+    width: 2px;
+    height: var(--stem-h, 220px);
+    background: linear-gradient(
+        180deg,
+        var(--v3-euca-deep) 0%,
+        var(--v3-leaf-deep) 100%
+    );
+    border-radius: 2px;
+}
+.euca__leaf {
+    position: absolute;
+    width: 15px;
+    height: 19px;
+    left: 50%;
+    border-radius: 50%;
+    background: radial-gradient(
+        60% 60% at 35% 30%,
+        var(--v3-euca) 0%,
+        var(--v3-euca-deep) 85%
+    );
+    box-shadow: inset -2px -2px 4px rgba(29, 61, 38, 0.3);
+}
+.euca__leaf--1 {
+    top: 8%;
+    transform: translate(-120%, 0) rotate(-18deg);
+}
+.euca__leaf--2 {
+    top: 8%;
+    transform: translate(20%, 0) rotate(16deg);
+}
+.euca__leaf--3 {
+    top: 26%;
+    transform: translate(-128%, 0) rotate(-24deg) scale(0.92);
+}
+.euca__leaf--4 {
+    top: 26%;
+    transform: translate(28%, 0) rotate(22deg) scale(0.92);
+}
+.euca__leaf--5 {
+    top: 44%;
+    transform: translate(-118%, 0) rotate(-16deg) scale(0.86);
+}
+.euca__leaf--6 {
+    top: 44%;
+    transform: translate(18%, 0) rotate(18deg) scale(0.86);
+}
+.euca__leaf--7 {
+    top: 62%;
+    transform: translate(-110%, 0) rotate(-14deg) scale(0.78);
+}
+.euca__leaf--8 {
+    top: 62%;
+    transform: translate(14%, 0) rotate(14deg) scale(0.78);
+}
+
+/* ---------- dark sword leaf ---------- */
+.leaf3 {
+    position: absolute;
+    left: 50%;
+    width: 66px;
+    height: 16px;
+    transform-origin: 0% 50%;
+    transform: translateX(calc(-4px + var(--base-x, 0px)))
+        rotate(var(--tilt, 0deg));
+    background: linear-gradient(120deg, var(--v3-leaf), var(--v3-leaf-deep));
+    clip-path: polygon(0% 50%, 48% 30%, 100% 4%, 86% 50%, 100% 96%, 48% 70%);
+    z-index: 0;
+}
+
+/* ---------- white lily (reused from style.css .lily), placed in the same vase ---------- */
+.arrangement .lily {
+    position: absolute;
+    bottom: 144px;
+    left: 50%;
+    width: 168px;
+    transform-origin: 50% 100%;
+    transform: translateX(calc(-50% + var(--base-x, 0px)))
+        rotate(var(--tilt, 0deg));
+    z-index: var(--layer, 1);
+    animation: bouquet3-sway var(--sway-dur, 10s) ease-in-out infinite;
+    animation-delay: var(--sway-delay, 0s);
+}
+
+/* ---------- lily bloom ---------- */
+.bloom3 {
+    position: absolute;
+    bottom: 144px;
+    left: 50%;
+    width: 4px;
+    transform-origin: 50% 100%;
+    transform: translateX(calc(-50% + var(--base-x, 0px)))
+        rotate(var(--tilt, 0deg));
+    z-index: var(--layer, 1);
+    animation: bouquet3-sway var(--sway-dur, 10s) ease-in-out infinite;
+    animation-delay: var(--sway-delay, 0s);
+}
+
+@keyframes bouquet3-sway {
+    0%,
+    100% {
+        transform: translateX(calc(-50% + var(--base-x, 0px)))
+            rotate(calc(var(--tilt, 0deg) - 0.5deg));
+    }
+    50% {
+        transform: translateX(calc(-50% + var(--base-x, 0px)))
+            rotate(calc(var(--tilt, 0deg) + 0.5deg));
+    }
+}
+
+.bloom3__stem {
+    width: 4px;
+    height: var(--stem-h, 190px);
+    background: linear-gradient(
+        180deg,
+        var(--v3-leaf) 0%,
+        var(--v3-leaf-deep) 100%
+    );
+    border-radius: 2px;
+}
+
+/* the exact point every petal, stamen and the pistil pivot from — one shared,
+   zero-size anchor so nothing can drift out of sync */
+.bloom3__core {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 0;
+    height: 0;
+    transform: scale(var(--bloom-scale, 1));
+}
+
+.bloom3__glow {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, 50%);
+    background: radial-gradient(
+        circle,
+        rgba(238, 240, 160, 0.85),
+        rgba(238, 240, 160, 0) 68%
+    );
+}
+
+.petal3 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: calc(58px + (var(--i) - 2.5) * 1.4px);
+    height: calc(106px + (var(--i) - 2.5) * 2.4px);
+    transform-origin: 50% 100%;
+    transform: translateX(-50%)
+        rotate(calc(60deg * var(--i) + (var(--i) - 2.5) * 1.8deg))
+        skewX(calc((var(--i) - 2.5) * 1.4deg));
+    clip-path: polygon(
+        50% 100%,
+        30% 90%,
+        14% 70%,
+        6% 46%,
+        10% 24%,
+        24% 8%,
+        50% 0%,
+        76% 8%,
+        90% 24%,
+        94% 46%,
+        86% 70%,
+        70% 90%
+    );
+    background:
+        radial-gradient(
+            2.8px 2.4px at 44% 90%,
+            var(--v3-speckle) 58%,
+            transparent 59%
+        ),
+        radial-gradient(
+            2.4px 2px at 58% 86%,
+            var(--v3-speckle) 58%,
+            transparent 59%
+        ),
+        radial-gradient(
+            2.6px 2.2px at 50% 80%,
+            var(--v3-speckle) 58%,
+            transparent 59%
+        ),
+        radial-gradient(
+            2.2px 2px at 62% 76%,
+            var(--v3-speckle) 58%,
+            transparent 59%
+        ),
+        radial-gradient(
+            2.2px 2px at 38% 74%,
+            var(--v3-speckle) 58%,
+            transparent 59%
+        ),
+        radial-gradient(
+            2px 1.8px at 52% 68%,
+            var(--v3-speckle) 58%,
+            transparent 59%
+        ),
+        radial-gradient(
+            1.8px 1.6px at 44% 62%,
+            var(--v3-speckle) 58%,
+            transparent 59%
+        ),
+        radial-gradient(
+            1.6px 1.4px at 58% 58%,
+            var(--v3-speckle) 58%,
+            transparent 59%
+        ),
+        radial-gradient(
+            30% 34% at 50% 6%,
+            rgba(255, 255, 255, 0.55) 0%,
+            rgba(255, 255, 255, 0) 70%
+        ),
+        linear-gradient(0deg, var(--v3-throat) 0%, rgba(238, 240, 160, 0) 26%),
+        linear-gradient(
+            0deg,
+            var(--v3-pink-deep) 0%,
+            var(--v3-pink) 52%,
+            var(--v3-white) 100%
+        );
+    box-shadow:
+        inset 6px 0 10px -6px rgba(255, 255, 255, 0.5),
+        inset -6px 0 10px -6px rgba(45, 10, 28, 0.25);
+}
+
+.stamen3 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 1.6px;
+    height: calc(70px + (var(--i) - 2.5) * 4px);
+    transform-origin: 50% 100%;
+    transform: translateX(-50%)
+        rotate(calc(60deg * var(--i) + 30deg + (var(--i) - 2.5) * 5deg));
+    background: linear-gradient(
+        0deg,
+        var(--v3-leaf-deep) 0%,
+        var(--v3-stamen) 45%,
+        var(--v3-stamen) 100%
+    );
+    border-radius: 2px;
+}
+.stamen3::after {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: -3px;
+    width: 6px;
+    height: 8px;
+    background: linear-gradient(160deg, #6b3420, var(--v3-stamen-tip) 75%);
+    border-radius: 45% 45% 50% 50% / 58% 58% 42% 42%;
+    transform: rotate(calc(18deg + (var(--i) - 2.5) * 6deg));
+    box-shadow: inset -1.5px -1.5px 2px rgba(0, 0, 0, 0.35);
+}
+
+.pistil3 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 78px;
+    transform: translateX(-50%);
+    background: linear-gradient(0deg, var(--v3-leaf-deep) 0%, #e7ecb0 92%);
+    border-radius: 2px;
+}
+.pistil3::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -2.5px;
+    width: 7px;
+    height: 7px;
+    background: radial-gradient(circle, #e2e79a, #b9c46f 75%);
+    border-radius: 50%;
+}
+
+@media (max-width: 480px) {
+    .arrangement {
+        height: 500px;
+        transform: scale(0.82);
+        transform-origin: top center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bloom3,
+    .euca {
+        animation: none !important;
+    }
+}
