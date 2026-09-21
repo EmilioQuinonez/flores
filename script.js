@@ -6,22 +6,6 @@ requestAnimationFrame(() => {
   setTimeout(() => header.classList.add('is-visible'), 150);
 });
 
-// Reveal the note card as it scrolls into view.
-const card = document.querySelector('.card');
-if ('IntersectionObserver' in window && !prefersReducedMotion) {
-  const cardObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        card.classList.add('is-visible');
-        cardObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.35 });
-  cardObserver.observe(card);
-} else {
-  card.classList.add('is-visible');
-}
-
 // Gentle parallax on the ambient glows, following the cursor.
 if (!prefersReducedMotion) {
   const glows = document.querySelectorAll('.glow');

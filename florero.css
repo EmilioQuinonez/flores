@@ -1,17 +1,12 @@
-/* Opción 3: réplica del ramo en florero de la foto de referencia — magenta intenso + eucalipto */
+/* Opción 3: ramo en florero — lirios y tulipanes amarillos + eucalipto
+   (la paleta amarilla --yellow-* vive en style.css) */
 
 :root {
-    --v3-white: #fff9f5;
-    --v3-pink: #de4a80;
-    --v3-pink-deep: #9c1450;
-    --v3-speckle: #6b0f38;
-    --v3-throat: #eef0a0;
+    --v3-throat: #e2e36a;
     --v3-leaf: #35643f;
     --v3-leaf-deep: #1d3d26;
     --v3-euca: #9fb6a4;
     --v3-euca-deep: #74907f;
-    --v3-stamen: #f2ecc9;
-    --v3-stamen-tip: #3c1c12;
     --v3-vase: #fbf9f4;
     --v3-vase-shade: #ddd6c6;
 }
@@ -172,6 +167,11 @@ header {
     animation-delay: var(--sway-delay, 0s);
 }
 
+/* leaves-only copy of a lily: the stem just gives the leaf its height reference */
+.arrangement .lily--back .lily__stem {
+    visibility: hidden;
+}
+
 /* ---------- lily bloom ---------- */
 .bloom3 {
     position: absolute;
@@ -229,8 +229,8 @@ header {
     transform: translate(-50%, 50%);
     background: radial-gradient(
         circle,
-        rgba(238, 240, 160, 0.85),
-        rgba(238, 240, 160, 0) 68%
+        rgba(255, 232, 110, 0.85),
+        rgba(255, 232, 110, 0) 68%
     );
 }
 
@@ -261,42 +261,42 @@ header {
     background:
         radial-gradient(
             2.8px 2.4px at 44% 90%,
-            var(--v3-speckle) 58%,
+            var(--yellow-speckle) 58%,
             transparent 59%
         ),
         radial-gradient(
             2.4px 2px at 58% 86%,
-            var(--v3-speckle) 58%,
+            var(--yellow-speckle) 58%,
             transparent 59%
         ),
         radial-gradient(
             2.6px 2.2px at 50% 80%,
-            var(--v3-speckle) 58%,
+            var(--yellow-speckle) 58%,
             transparent 59%
         ),
         radial-gradient(
             2.2px 2px at 62% 76%,
-            var(--v3-speckle) 58%,
+            var(--yellow-speckle) 58%,
             transparent 59%
         ),
         radial-gradient(
             2.2px 2px at 38% 74%,
-            var(--v3-speckle) 58%,
+            var(--yellow-speckle) 58%,
             transparent 59%
         ),
         radial-gradient(
             2px 1.8px at 52% 68%,
-            var(--v3-speckle) 58%,
+            var(--yellow-speckle) 58%,
             transparent 59%
         ),
         radial-gradient(
             1.8px 1.6px at 44% 62%,
-            var(--v3-speckle) 58%,
+            var(--yellow-speckle) 58%,
             transparent 59%
         ),
         radial-gradient(
             1.6px 1.4px at 58% 58%,
-            var(--v3-speckle) 58%,
+            var(--yellow-speckle) 58%,
             transparent 59%
         ),
         radial-gradient(
@@ -304,67 +304,154 @@ header {
             rgba(255, 255, 255, 0.55) 0%,
             rgba(255, 255, 255, 0) 70%
         ),
-        linear-gradient(0deg, var(--v3-throat) 0%, rgba(238, 240, 160, 0) 26%),
+        linear-gradient(0deg, var(--v3-throat) 0%, rgba(226, 227, 106, 0) 26%),
         linear-gradient(
             0deg,
-            var(--v3-pink-deep) 0%,
-            var(--v3-pink) 52%,
-            var(--v3-white) 100%
+            var(--yellow-deep) 0%,
+            var(--yellow) 52%,
+            var(--yellow-light) 100%
         );
     box-shadow:
         inset 6px 0 10px -6px rgba(255, 255, 255, 0.5),
-        inset -6px 0 10px -6px rgba(45, 10, 28, 0.25);
+        inset -6px 0 10px -6px rgba(90, 50, 0, 0.25);
 }
 
-.stamen3 {
-    position: absolute;
+/* stamens + pistil: same markup and look as the small lilies (.stamens in
+   style.css); only re-anchored to the bloom's zero-size core */
+.bloom3__core .stamens {
     left: 0;
-    bottom: 0;
-    width: 1.6px;
-    height: calc(70px + (var(--i) - 2.5) * 4px);
+    top: 0;
+}
+
+/* ---------- yellow tulip ---------- */
+.tulip {
+    position: absolute;
+    bottom: 144px;
+    left: 50%;
+    width: 4px;
+    /* explicit, so the head-only copy still sits at the stem tip */
+    height: var(--stem-h, 240px);
     transform-origin: 50% 100%;
-    transform: translateX(-50%)
-        rotate(calc(60deg * var(--i) + 30deg + (var(--i) - 2.5) * 5deg));
+    transform: translateX(calc(-50% + var(--base-x, 0px)))
+        rotate(var(--tilt, 0deg));
+    z-index: var(--layer, 1);
+    animation: bouquet3-sway var(--sway-dur, 10s) ease-in-out infinite;
+    animation-delay: var(--sway-delay, 0s);
+}
+
+.tulip__stem {
+    width: 3px;
+    height: var(--stem-h, 240px);
+    margin: 0 auto;
     background: linear-gradient(
-        0deg,
-        var(--v3-leaf-deep) 0%,
-        var(--v3-stamen) 45%,
-        var(--v3-stamen) 100%
+        180deg,
+        var(--v3-leaf) 0%,
+        var(--v3-leaf-deep) 100%
     );
     border-radius: 2px;
 }
-.stamen3::after {
-    content: "";
+
+.tulip__leaf {
     position: absolute;
-    top: -7px;
-    left: -3px;
-    width: 6px;
-    height: 8px;
-    background: linear-gradient(160deg, #6b3420, var(--v3-stamen-tip) 75%);
-    border-radius: 45% 45% 50% 50% / 58% 58% 42% 42%;
-    transform: rotate(calc(18deg + (var(--i) - 2.5) * 6deg));
-    box-shadow: inset -1.5px -1.5px 2px rgba(0, 0, 0, 0.35);
+    left: 50%;
+    bottom: 0;
+    width: 13px;
+    transform-origin: 50% 100%;
+    clip-path: polygon(
+        50% 100%,
+        14% 82%,
+        4% 56%,
+        18% 28%,
+        50% 0%,
+        82% 28%,
+        96% 56%,
+        86% 82%
+    );
+    background: linear-gradient(0deg, var(--v3-leaf-deep), var(--v3-leaf));
+}
+.tulip__leaf--l {
+    height: 110px;
+    transform: translateX(-50%) rotate(-24deg);
+}
+.tulip__leaf--r {
+    height: 88px;
+    transform: translateX(-50%) rotate(20deg);
 }
 
-.pistil3 {
+/* same zero-size anchor trick as .bloom3__core: the cup grows upward from the
+   stem tip */
+.tulip__head {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 0;
+    height: 0;
+    transform: scale(var(--bloom-scale, 1));
+    filter: drop-shadow(0 4px 5px rgba(15, 24, 18, 0.35));
+}
+
+.tulip__petal {
     position: absolute;
     left: 0;
-    bottom: 0;
-    width: 2px;
-    height: 78px;
-    transform: translateX(-50%);
-    background: linear-gradient(0deg, var(--v3-leaf-deep) 0%, #e7ecb0 92%);
-    border-radius: 2px;
+    bottom: -9px;
+    transform-origin: 50% 100%;
+    clip-path: polygon(
+        50% 100%,
+        18% 90%,
+        3% 70%,
+        0% 48%,
+        8% 28%,
+        26% 14%,
+        40% 6%,
+        50% 0%,
+        60% 6%,
+        74% 14%,
+        92% 28%,
+        100% 48%,
+        97% 70%,
+        82% 90%
+    );
 }
-.pistil3::after {
-    content: "";
-    position: absolute;
-    top: -4px;
-    left: -2.5px;
-    width: 7px;
-    height: 7px;
-    background: radial-gradient(circle, #e2e79a, #b9c46f 75%);
-    border-radius: 50%;
+.tulip__petal--l,
+.tulip__petal--r {
+    width: 26px;
+    height: 54px;
+    background: linear-gradient(
+        0deg,
+        #b87508 0%,
+        var(--yellow-deep) 50%,
+        var(--yellow) 100%
+    );
+}
+.tulip__petal--l {
+    transform: translateX(calc(-50% - 7px)) rotate(-11deg);
+}
+.tulip__petal--r {
+    transform: translateX(calc(-50% + 7px)) rotate(11deg);
+}
+.tulip__petal--c {
+    width: 30px;
+    height: 62px;
+    transform: translateX(-50%);
+    background:
+        radial-gradient(
+            34% 30% at 50% 12%,
+            rgba(255, 255, 255, 0.55) 0%,
+            rgba(255, 255, 255, 0) 100%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(217, 143, 10, 0.5) 0%,
+            transparent 24%,
+            transparent 76%,
+            rgba(217, 143, 10, 0.5) 100%
+        ),
+        linear-gradient(
+            0deg,
+            var(--yellow-deep) 0%,
+            var(--yellow) 40%,
+            var(--yellow-light) 100%
+        );
 }
 
 @media (max-width: 480px) {
@@ -377,6 +464,7 @@ header {
 
 @media (prefers-reduced-motion: reduce) {
     .bloom3,
+    .tulip,
     .euca {
         animation: none !important;
     }

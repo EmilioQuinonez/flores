@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Un florero</title>
+        <title>Un florero para Mafer — opción 3</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="florero.css" />
     </head>
@@ -14,9 +14,8 @@
             <div class="glow glow--3"></div>
 
             <header>
-                <h1>Para Mafer</h1>
                 <p class="subtitle">
-                    (espero que me hayan salido los lirios jaja)
+                    No creo que lo veas, pero de todas maneras las hago para ti.
                 </p>
             </header>
 
@@ -31,6 +30,78 @@
                     class="leaf3"
                     style="bottom: 142px; --base-x: 8px; --tilt: 20deg"
                 ></div>
+
+                <!-- Hojas de lirios y tulipanes: van aparte, al fondo del ramo.
+                     Comparten --tilt, --base-x y --sway-delay con su flor para
+                     moverse igual que ella. -->
+                <div
+                    class="lily lily--back"
+                    style="
+                        --stem-h: 155px;
+                        --tilt: -8deg;
+                        --base-x: -14px;
+                        --layer: 0;
+                        --sway-delay: -3s;
+                    "
+                >
+                    <div class="lily__leaf lily__leaf--l"></div>
+                    <div class="lily__stem"></div>
+                </div>
+                <div
+                    class="lily lily--back"
+                    style="
+                        --stem-h: 160px;
+                        --tilt: 33deg;
+                        --base-x: 24px;
+                        --layer: 0;
+                        --sway-delay: -1.4s;
+                    "
+                >
+                    <div class="lily__leaf lily__leaf--r"></div>
+                    <div class="lily__stem"></div>
+                </div>
+                <div
+                    class="tulip"
+                    style="
+                        --stem-h: 325px;
+                        --tilt: -17deg;
+                        --base-x: -18px;
+                        --layer: 0;
+                        --sway-delay: -1.8s;
+                    "
+                >
+                    <div class="tulip__leaf tulip__leaf--l"></div>
+                    <div class="tulip__leaf tulip__leaf--r"></div>
+                    <div class="tulip__stem"></div>
+                </div>
+                <div
+                    class="tulip"
+                    style="
+                        --stem-h: 305px;
+                        --tilt: 22deg;
+                        --base-x: 16px;
+                        --layer: 0;
+                        --sway-delay: -3.7s;
+                    "
+                >
+                    <div class="tulip__leaf tulip__leaf--l"></div>
+                    <div class="tulip__leaf tulip__leaf--r"></div>
+                    <div class="tulip__stem"></div>
+                </div>
+                <div
+                    class="tulip"
+                    style="
+                        --stem-h: 345px;
+                        --tilt: 2deg;
+                        --base-x: -2px;
+                        --layer: 0;
+                        --sway-delay: -0.9s;
+                    "
+                >
+                    <div class="tulip__leaf tulip__leaf--l"></div>
+                    <div class="tulip__leaf tulip__leaf--r"></div>
+                    <div class="tulip__stem"></div>
+                </div>
 
                 <div
                     class="euca"
@@ -99,7 +170,6 @@
                         <div class="petal" style="--i: 4"></div>
                         <div class="petal" style="--i: 5"></div>
                     </div>
-                    <div class="lily__leaf lily__leaf--l"></div>
                     <div class="lily__stem"></div>
                 </div>
 
@@ -130,7 +200,6 @@
                         <div class="petal" style="--i: 4"></div>
                         <div class="petal" style="--i: 5"></div>
                     </div>
-                    <div class="lily__leaf lily__leaf--r"></div>
                     <div class="lily__stem"></div>
                 </div>
 
@@ -148,13 +217,14 @@
                     <div class="bloom3__stem"></div>
                     <div class="bloom3__core">
                         <div class="bloom3__glow"></div>
-                        <div class="stamen3" style="--i: 0"></div>
-                        <div class="stamen3" style="--i: 1"></div>
-                        <div class="stamen3" style="--i: 2"></div>
-                        <div class="stamen3" style="--i: 3"></div>
-                        <div class="stamen3" style="--i: 4"></div>
-                        <div class="stamen3" style="--i: 5"></div>
-                        <div class="pistil3"></div>
+                        <div class="stamens">
+                            <div class="stamen" style="--i: 0"></div>
+                            <div class="stamen" style="--i: 1"></div>
+                            <div class="stamen" style="--i: 2"></div>
+                            <div class="stamen" style="--i: 3"></div>
+                            <div class="stamen" style="--i: 4"></div>
+                            <div class="stamen" style="--i: 5"></div>
+                        </div>
                         <div class="petal3" style="--i: 0"></div>
                         <div class="petal3" style="--i: 1"></div>
                         <div class="petal3" style="--i: 2"></div>
@@ -178,13 +248,14 @@
                     <div class="bloom3__stem"></div>
                     <div class="bloom3__core">
                         <div class="bloom3__glow"></div>
-                        <div class="stamen3" style="--i: 0"></div>
-                        <div class="stamen3" style="--i: 1"></div>
-                        <div class="stamen3" style="--i: 2"></div>
-                        <div class="stamen3" style="--i: 3"></div>
-                        <div class="stamen3" style="--i: 4"></div>
-                        <div class="stamen3" style="--i: 5"></div>
-                        <div class="pistil3"></div>
+                        <div class="stamens">
+                            <div class="stamen" style="--i: 0"></div>
+                            <div class="stamen" style="--i: 1"></div>
+                            <div class="stamen" style="--i: 2"></div>
+                            <div class="stamen" style="--i: 3"></div>
+                            <div class="stamen" style="--i: 4"></div>
+                            <div class="stamen" style="--i: 5"></div>
+                        </div>
                         <div class="petal3" style="--i: 0"></div>
                         <div class="petal3" style="--i: 1"></div>
                         <div class="petal3" style="--i: 2"></div>
@@ -208,13 +279,14 @@
                     <div class="bloom3__stem"></div>
                     <div class="bloom3__core">
                         <div class="bloom3__glow"></div>
-                        <div class="stamen3" style="--i: 0"></div>
-                        <div class="stamen3" style="--i: 1"></div>
-                        <div class="stamen3" style="--i: 2"></div>
-                        <div class="stamen3" style="--i: 3"></div>
-                        <div class="stamen3" style="--i: 4"></div>
-                        <div class="stamen3" style="--i: 5"></div>
-                        <div class="pistil3"></div>
+                        <div class="stamens">
+                            <div class="stamen" style="--i: 0"></div>
+                            <div class="stamen" style="--i: 1"></div>
+                            <div class="stamen" style="--i: 2"></div>
+                            <div class="stamen" style="--i: 3"></div>
+                            <div class="stamen" style="--i: 4"></div>
+                            <div class="stamen" style="--i: 5"></div>
+                        </div>
                         <div class="petal3" style="--i: 0"></div>
                         <div class="petal3" style="--i: 1"></div>
                         <div class="petal3" style="--i: 2"></div>
@@ -238,13 +310,14 @@
                     <div class="bloom3__stem"></div>
                     <div class="bloom3__core">
                         <div class="bloom3__glow"></div>
-                        <div class="stamen3" style="--i: 0"></div>
-                        <div class="stamen3" style="--i: 1"></div>
-                        <div class="stamen3" style="--i: 2"></div>
-                        <div class="stamen3" style="--i: 3"></div>
-                        <div class="stamen3" style="--i: 4"></div>
-                        <div class="stamen3" style="--i: 5"></div>
-                        <div class="pistil3"></div>
+                        <div class="stamens">
+                            <div class="stamen" style="--i: 0"></div>
+                            <div class="stamen" style="--i: 1"></div>
+                            <div class="stamen" style="--i: 2"></div>
+                            <div class="stamen" style="--i: 3"></div>
+                            <div class="stamen" style="--i: 4"></div>
+                            <div class="stamen" style="--i: 5"></div>
+                        </div>
                         <div class="petal3" style="--i: 0"></div>
                         <div class="petal3" style="--i: 1"></div>
                         <div class="petal3" style="--i: 2"></div>
@@ -253,22 +326,61 @@
                         <div class="petal3" style="--i: 5"></div>
                     </div>
                 </div>
-            </div>
 
-            <section class="note-section">
-                <div class="card">
-                    <p class="opening">
-                        Espero que te recuperes pronto y te cuides mucho. Te mando un abrazo fuerte, tómate el tiempo que necesites para sentirte mejor, no hay prisa.
-                    </p>
-                    <span class="sign">Con todo mi cariño.</span>
+                <div
+                    class="tulip"
+                    style="
+                        --stem-h: 325px;
+                        --tilt: -17deg;
+                        --base-x: -18px;
+                        --bloom-scale: 1;
+                        --layer: 5;
+                        --sway-delay: -1.8s;
+                    "
+                >
+                    <div class="tulip__head">
+                        <div class="tulip__petal tulip__petal--l"></div>
+                        <div class="tulip__petal tulip__petal--r"></div>
+                        <div class="tulip__petal tulip__petal--c"></div>
+                    </div>
                 </div>
-            </section>
 
-            <div class="closing">
-                <h2>Mejórate pronto</h2>
+                <div
+                    class="tulip"
+                    style="
+                        --stem-h: 305px;
+                        --tilt: 22deg;
+                        --base-x: 16px;
+                        --bloom-scale: 0.95;
+                        --layer: 5;
+                        --sway-delay: -3.7s;
+                    "
+                >
+                    <div class="tulip__head">
+                        <div class="tulip__petal tulip__petal--l"></div>
+                        <div class="tulip__petal tulip__petal--r"></div>
+                        <div class="tulip__petal tulip__petal--c"></div>
+                    </div>
+                </div>
+
+                <div
+                    class="tulip"
+                    style="
+                        --stem-h: 345px;
+                        --tilt: 2deg;
+                        --base-x: -2px;
+                        --bloom-scale: 1.05;
+                        --layer: 5;
+                        --sway-delay: -0.9s;
+                    "
+                >
+                    <div class="tulip__head">
+                        <div class="tulip__petal tulip__petal--l"></div>
+                        <div class="tulip__petal tulip__petal--r"></div>
+                        <div class="tulip__petal tulip__petal--c"></div>
+                    </div>
+                </div>
             </div>
-
-            <footer>Espero y te gusten 😁</footer>
         </div>
 
         <script src="script.js"></script>
