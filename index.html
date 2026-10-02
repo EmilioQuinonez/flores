@@ -3,386 +3,191 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Un florero para Mafer — opción 3</title>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="florero.css" />
+        <title>Feliz cumpleaños</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="cumple.css" />
     </head>
     <body>
-        <div class="scene">
-            <div class="glow glow--1"></div>
-            <div class="glow glow--2"></div>
-            <div class="glow glow--3"></div>
+        <main class="scene">
+            <!-- Confeti de fondo y ramos de las esquinas: los genera cumple.js -->
+            <div class="confetti" aria-hidden="true"></div>
 
-            <header>
-                <p class="subtitle">
-                    Por si nadie te dio tus flores amarillas, pues yo sí.
-                </p>
-            </header>
+            <div class="corner corner--tl" aria-hidden="true"></div>
+            <div class="corner corner--br" aria-hidden="true"></div>
 
-            <div class="arrangement">
-                <div class="vase"></div>
-
-                <div
-                    class="leaf3"
-                    style="bottom: 142px; --base-x: -10px; --tilt: -22deg"
-                ></div>
-                <div
-                    class="leaf3"
-                    style="bottom: 142px; --base-x: 8px; --tilt: 20deg"
-                ></div>
-
-                <!-- Hojas de lirios y tulipanes: van aparte, al fondo del ramo.
-                     Comparten --tilt, --base-x y --sway-delay con su flor para
-                     moverse igual que ella. -->
-                <div
-                    class="lily lily--back"
-                    style="
-                        --stem-h: 155px;
-                        --tilt: -8deg;
-                        --base-x: -14px;
-                        --layer: 0;
-                        --sway-delay: -3s;
-                    "
-                >
-                    <div class="lily__leaf lily__leaf--l"></div>
-                    <div class="lily__stem"></div>
-                </div>
-                <div
-                    class="lily lily--back"
-                    style="
-                        --stem-h: 160px;
-                        --tilt: 33deg;
-                        --base-x: 24px;
-                        --layer: 0;
-                        --sway-delay: -1.4s;
-                    "
-                >
-                    <div class="lily__leaf lily__leaf--r"></div>
-                    <div class="lily__stem"></div>
-                </div>
-                <div
-                    class="tulip"
-                    style="
-                        --stem-h: 325px;
-                        --tilt: -17deg;
-                        --base-x: -18px;
-                        --layer: 0;
-                        --sway-delay: -1.8s;
-                    "
-                >
-                    <div class="tulip__leaf tulip__leaf--l"></div>
-                    <div class="tulip__leaf tulip__leaf--r"></div>
-                    <div class="tulip__stem"></div>
-                </div>
-                <div
-                    class="tulip"
-                    style="
-                        --stem-h: 305px;
-                        --tilt: 22deg;
-                        --base-x: 16px;
-                        --layer: 0;
-                        --sway-delay: -3.7s;
-                    "
-                >
-                    <div class="tulip__leaf tulip__leaf--l"></div>
-                    <div class="tulip__leaf tulip__leaf--r"></div>
-                    <div class="tulip__stem"></div>
-                </div>
-                <div
-                    class="tulip"
-                    style="
-                        --stem-h: 345px;
-                        --tilt: 2deg;
-                        --base-x: -2px;
-                        --layer: 0;
-                        --sway-delay: -0.9s;
-                    "
-                >
-                    <div class="tulip__leaf tulip__leaf--l"></div>
-                    <div class="tulip__leaf tulip__leaf--r"></div>
-                    <div class="tulip__stem"></div>
-                </div>
-
-                <div
-                    class="euca"
-                    style="
-                        --stem-h: 250px;
-                        --tilt: -26deg;
-                        --base-x: -26px;
-                        --layer: 2;
-                        --sway-delay: -1s;
-                    "
-                >
-                    <div class="euca__stem"></div>
-                    <div class="euca__leaf euca__leaf--1"></div>
-                    <div class="euca__leaf euca__leaf--2"></div>
-                    <div class="euca__leaf euca__leaf--3"></div>
-                    <div class="euca__leaf euca__leaf--4"></div>
-                    <div class="euca__leaf euca__leaf--5"></div>
-                    <div class="euca__leaf euca__leaf--6"></div>
-                    <div class="euca__leaf euca__leaf--7"></div>
-                    <div class="euca__leaf euca__leaf--8"></div>
-                </div>
-
-                <div
-                    class="euca"
-                    style="
-                        --stem-h: 220px;
-                        --tilt: 29deg;
-                        --base-x: 30px;
-                        --layer: 2;
-                        --sway-delay: -2.6s;
-                    "
-                >
-                    <div class="euca__stem"></div>
-                    <div class="euca__leaf euca__leaf--1"></div>
-                    <div class="euca__leaf euca__leaf--2"></div>
-                    <div class="euca__leaf euca__leaf--3"></div>
-                    <div class="euca__leaf euca__leaf--4"></div>
-                    <div class="euca__leaf euca__leaf--5"></div>
-                    <div class="euca__leaf euca__leaf--6"></div>
-                </div>
-
-                <div
-                    class="lily lily--md"
-                    style="
-                        --stem-h: 155px;
-                        --tilt: -8deg;
-                        --base-x: -14px;
-                        --bloom-scale: 1.02;
-                        --layer: 4;
-                        --sway-delay: -3s;
-                    "
-                >
-                    <div class="lily__bloom">
-                        <div class="stamens">
-                            <div class="stamen" style="--i: 0"></div>
-                            <div class="stamen" style="--i: 1"></div>
-                            <div class="stamen" style="--i: 2"></div>
-                            <div class="stamen" style="--i: 3"></div>
-                            <div class="stamen" style="--i: 4"></div>
-                            <div class="stamen" style="--i: 5"></div>
-                        </div>
-                        <div class="petal" style="--i: 0"></div>
-                        <div class="petal" style="--i: 1"></div>
-                        <div class="petal" style="--i: 2"></div>
-                        <div class="petal" style="--i: 3"></div>
-                        <div class="petal" style="--i: 4"></div>
-                        <div class="petal" style="--i: 5"></div>
+            <div class="party">
+                <!-- Mismo racimo que el de la derecha, en espejo -->
+                <div class="balloons balloons--left" aria-hidden="true">
+                    <div
+                        class="balloon"
+                        style="--c: #f4aeb0; --h: 13.5em; --lean: 14deg; --delay: -1.5s; --size: 0.95"
+                    >
+                        <div class="balloon__body"></div>
                     </div>
-                    <div class="lily__stem"></div>
-                </div>
-
-                <div
-                    class="lily lily--md"
-                    style="
-                        --stem-h: 160px;
-                        --tilt: 33deg;
-                        --base-x: 24px;
-                        --bloom-scale: 0.9;
-                        --layer: 2;
-                        --sway-delay: -1.4s;
-                    "
-                >
-                    <div class="lily__bloom">
-                        <div class="stamens">
-                            <div class="stamen" style="--i: 0"></div>
-                            <div class="stamen" style="--i: 1"></div>
-                            <div class="stamen" style="--i: 2"></div>
-                            <div class="stamen" style="--i: 3"></div>
-                            <div class="stamen" style="--i: 4"></div>
-                            <div class="stamen" style="--i: 5"></div>
-                        </div>
-                        <div class="petal" style="--i: 0"></div>
-                        <div class="petal" style="--i: 1"></div>
-                        <div class="petal" style="--i: 2"></div>
-                        <div class="petal" style="--i: 3"></div>
-                        <div class="petal" style="--i: 4"></div>
-                        <div class="petal" style="--i: 5"></div>
+                    <div
+                        class="balloon"
+                        style="--c: #e8909a; --h: 14.5em; --lean: -7deg; --delay: -3.1s; --size: 0.95"
+                    >
+                        <div class="balloon__body"></div>
                     </div>
-                    <div class="lily__stem"></div>
-                </div>
-
-                <div
-                    class="bloom3"
-                    style="
-                        --stem-h: 150px;
-                        --tilt: -62deg;
-                        --base-x: -32px;
-                        --bloom-scale: 0.82;
-                        --layer: 1;
-                        --sway-delay: -3.4s;
-                    "
-                >
-                    <div class="bloom3__stem"></div>
-                    <div class="bloom3__core">
-                        <div class="bloom3__glow"></div>
-                        <div class="stamens">
-                            <div class="stamen" style="--i: 0"></div>
-                            <div class="stamen" style="--i: 1"></div>
-                            <div class="stamen" style="--i: 2"></div>
-                            <div class="stamen" style="--i: 3"></div>
-                            <div class="stamen" style="--i: 4"></div>
-                            <div class="stamen" style="--i: 5"></div>
-                        </div>
-                        <div class="petal3" style="--i: 0"></div>
-                        <div class="petal3" style="--i: 1"></div>
-                        <div class="petal3" style="--i: 2"></div>
-                        <div class="petal3" style="--i: 3"></div>
-                        <div class="petal3" style="--i: 4"></div>
-                        <div class="petal3" style="--i: 5"></div>
+                    <div
+                        class="balloon"
+                        style="--c: #ffd36b; --h: 25em; --lean: -4deg; --delay: -0.6s; --size: 1.35"
+                    >
+                        <div class="balloon__body"></div>
+                    </div>
+                    <div
+                        class="balloon"
+                        style="--c: #b9a2e0; --h: 19.5em; --lean: 9deg; --delay: -2.7s"
+                    >
+                        <div class="balloon__body"></div>
+                    </div>
+                    <div
+                        class="balloon"
+                        style="--c: #86cfc4; --h: 17.5em; --lean: -17deg; --delay: -4s"
+                    >
+                        <div class="balloon__body"></div>
+                    </div>
+                    <div
+                        class="balloon"
+                        style="--c: #8dbbea; --h: 16.5em; --lean: 25deg; --delay: -2.2s"
+                    >
+                        <div class="balloon__body"></div>
                     </div>
                 </div>
 
-                <div
-                    class="bloom3"
-                    style="
-                        --stem-h: 186px;
-                        --tilt: -35deg;
-                        --base-x: -22px;
-                        --bloom-scale: 1.05;
-                        --layer: 2;
-                        --sway-delay: -0.6s;
-                    "
-                >
-                    <div class="bloom3__stem"></div>
-                    <div class="bloom3__core">
-                        <div class="bloom3__glow"></div>
-                        <div class="stamens">
-                            <div class="stamen" style="--i: 0"></div>
-                            <div class="stamen" style="--i: 1"></div>
-                            <div class="stamen" style="--i: 2"></div>
-                            <div class="stamen" style="--i: 3"></div>
-                            <div class="stamen" style="--i: 4"></div>
-                            <div class="stamen" style="--i: 5"></div>
-                        </div>
-                        <div class="petal3" style="--i: 0"></div>
-                        <div class="petal3" style="--i: 1"></div>
-                        <div class="petal3" style="--i: 2"></div>
-                        <div class="petal3" style="--i: 3"></div>
-                        <div class="petal3" style="--i: 4"></div>
-                        <div class="petal3" style="--i: 5"></div>
-                    </div>
+                <div class="title-wrap">
+                    <h1 class="title"><span>Feliz</span> <span>cumpleaños</span></h1>
+                    <span class="sparkle" style="left: -1%; top: 8%; --size: 1.5em"></span>
+                    <span
+                        class="sparkle"
+                        style="left: 31%; top: -6%; --size: 1em; --delay: -1.1s"
+                    ></span>
+                    <span
+                        class="sparkle"
+                        style="left: 97%; top: 2%; --size: 1.7em; --delay: -0.5s"
+                    ></span>
+                    <span
+                        class="sparkle"
+                        style="left: 90%; top: 84%; --size: 1.1em; --delay: -1.7s"
+                    ></span>
+                    <span
+                        class="sparkle"
+                        style="left: 6%; top: 88%; --size: 0.9em; --delay: -2.3s"
+                    ></span>
                 </div>
 
-                <div
-                    class="bloom3"
-                    style="
-                        --stem-h: 210px;
-                        --tilt: 8deg;
-                        --base-x: 6px;
-                        --bloom-scale: 1.3;
-                        --layer: 3;
-                        --sway-delay: -4.2s;
-                    "
-                >
-                    <div class="bloom3__stem"></div>
-                    <div class="bloom3__core">
-                        <div class="bloom3__glow"></div>
-                        <div class="stamens">
-                            <div class="stamen" style="--i: 0"></div>
-                            <div class="stamen" style="--i: 1"></div>
-                            <div class="stamen" style="--i: 2"></div>
-                            <div class="stamen" style="--i: 3"></div>
-                            <div class="stamen" style="--i: 4"></div>
-                            <div class="stamen" style="--i: 5"></div>
-                        </div>
-                        <div class="petal3" style="--i: 0"></div>
-                        <div class="petal3" style="--i: 1"></div>
-                        <div class="petal3" style="--i: 2"></div>
-                        <div class="petal3" style="--i: 3"></div>
-                        <div class="petal3" style="--i: 4"></div>
-                        <div class="petal3" style="--i: 5"></div>
+                <button class="cake" type="button" aria-label="Soplar las velas">
+                    <div class="cake__candles">
+                        <span class="candle" style="--c: #f28b9c; --delay: -0.2s">
+                            <span class="candle__flame"></span>
+                            <span class="candle__smoke"></span>
+                        </span>
+                        <span class="candle" style="--c: #86cfc4; --delay: -0.7s">
+                            <span class="candle__flame"></span>
+                            <span class="candle__smoke"></span>
+                        </span>
+                        <span class="candle" style="--c: #ffc95c; --delay: -0.4s">
+                            <span class="candle__flame"></span>
+                            <span class="candle__smoke"></span>
+                        </span>
+                        <span class="candle" style="--c: #b9a2e0; --delay: -0.9s">
+                            <span class="candle__flame"></span>
+                            <span class="candle__smoke"></span>
+                        </span>
+                        <span class="candle" style="--c: #8dbbea; --delay: -0.1s">
+                            <span class="candle__flame"></span>
+                            <span class="candle__smoke"></span>
+                        </span>
                     </div>
-                </div>
+                    <div class="cake__tier cake__tier--top"></div>
+                    <div class="cake__tier cake__tier--bottom"></div>
+                    <div class="cake__plate"></div>
+                    <div class="cake__foot"></div>
+                    <!-- Ramito al pie del pastel: lo genera cumple.js -->
+                    <div class="cake__bouquet" aria-hidden="true"></div>
+                </button>
 
-                <div
-                    class="bloom3"
-                    style="
-                        --stem-h: 138px;
-                        --tilt: 48deg;
-                        --base-x: 32px;
-                        --bloom-scale: 0.8;
-                        --layer: 1;
-                        --sway-delay: -2s;
-                    "
-                >
-                    <div class="bloom3__stem"></div>
-                    <div class="bloom3__core">
-                        <div class="bloom3__glow"></div>
-                        <div class="stamens">
-                            <div class="stamen" style="--i: 0"></div>
-                            <div class="stamen" style="--i: 1"></div>
-                            <div class="stamen" style="--i: 2"></div>
-                            <div class="stamen" style="--i: 3"></div>
-                            <div class="stamen" style="--i: 4"></div>
-                            <div class="stamen" style="--i: 5"></div>
-                        </div>
-                        <div class="petal3" style="--i: 0"></div>
-                        <div class="petal3" style="--i: 1"></div>
-                        <div class="petal3" style="--i: 2"></div>
-                        <div class="petal3" style="--i: 3"></div>
-                        <div class="petal3" style="--i: 4"></div>
-                        <div class="petal3" style="--i: 5"></div>
+                <p class="hint" aria-live="polite">Pide un deseo y toca el pastel</p>
+
+                <div class="balloons balloons--right" aria-hidden="true">
+                    <div
+                        class="balloon"
+                        style="--c: #e8909a; --h: 13.5em; --lean: -14deg; --delay: -1.5s; --size: 0.95"
+                    >
+                        <div class="balloon__body"></div>
                     </div>
-                </div>
-
-                <div
-                    class="tulip"
-                    style="
-                        --stem-h: 325px;
-                        --tilt: -17deg;
-                        --base-x: -18px;
-                        --bloom-scale: 1;
-                        --layer: 5;
-                        --sway-delay: -1.8s;
-                    "
-                >
-                    <div class="tulip__head">
-                        <div class="tulip__petal tulip__petal--l"></div>
-                        <div class="tulip__petal tulip__petal--r"></div>
-                        <div class="tulip__petal tulip__petal--c"></div>
+                    <div
+                        class="balloon"
+                        style="--c: #f4aeb0; --h: 14.5em; --lean: 7deg; --delay: -3.1s; --size: 0.95"
+                    >
+                        <div class="balloon__body"></div>
                     </div>
-                </div>
-
-                <div
-                    class="tulip"
-                    style="
-                        --stem-h: 305px;
-                        --tilt: 22deg;
-                        --base-x: 16px;
-                        --bloom-scale: 0.95;
-                        --layer: 5;
-                        --sway-delay: -3.7s;
-                    "
-                >
-                    <div class="tulip__head">
-                        <div class="tulip__petal tulip__petal--l"></div>
-                        <div class="tulip__petal tulip__petal--r"></div>
-                        <div class="tulip__petal tulip__petal--c"></div>
+                    <div
+                        class="balloon"
+                        style="--c: #8fd8d2; --h: 25em; --lean: 4deg; --delay: -0.6s; --size: 1.35"
+                    >
+                        <div class="balloon__body"></div>
                     </div>
-                </div>
-
-                <div
-                    class="tulip"
-                    style="
-                        --stem-h: 345px;
-                        --tilt: 2deg;
-                        --base-x: -2px;
-                        --bloom-scale: 1.05;
-                        --layer: 5;
-                        --sway-delay: -0.9s;
-                    "
-                >
-                    <div class="tulip__head">
-                        <div class="tulip__petal tulip__petal--l"></div>
-                        <div class="tulip__petal tulip__petal--r"></div>
-                        <div class="tulip__petal tulip__petal--c"></div>
+                    <div
+                        class="balloon"
+                        style="--c: #f58f84; --h: 19.5em; --lean: -9deg; --delay: -2.7s"
+                    >
+                        <div class="balloon__body"></div>
+                    </div>
+                    <div
+                        class="balloon"
+                        style="--c: #ffb680; --h: 17.5em; --lean: 17deg; --delay: -4s"
+                    >
+                        <div class="balloon__body"></div>
+                    </div>
+                    <div
+                        class="balloon"
+                        style="--c: #8dbbea; --h: 16.5em; --lean: -25deg; --delay: -2.2s"
+                    >
+                        <div class="balloon__body"></div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <script src="script.js"></script>
+
+            <!-- Carta que se abre al soplar las velas -->
+            <div class="letter" hidden>
+                <div class="letter__backdrop"></div>
+                <div class="envelope">
+                    <div class="envelope__back"></div>
+                    <article
+                        class="letter__paper"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label="Carta de cumpleaños"
+                    >
+                        <button class="letter__close" type="button" aria-label="Cerrar la carta">
+                            &times;
+                        </button>
+                        <div class="letter__text">
+                            <p>
+                                Feliz cumpleee, pasatela muy bonito en tu dia especial y
+                                que sigas cumpliendo muchos años más, sabes que siempre
+                                tendras un lugar en mi corazón, te deseo todo lo mejor y
+                                lo mas bonito del mundo. Te quiero &lt;3
+                            </p>
+                            <p class="letter__ps">
+                                pd: Aunque probablemente ni vayas a ver esto jajaja.
+                            </p>
+                        </div>
+                    </article>
+                    <div class="envelope__front"></div>
+                    <div class="envelope__flap"></div>
+                </div>
+            </div>
+        </main>
+
+        <script src="cumple.js"></script>
     </body>
 </html>
